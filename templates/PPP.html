@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Power Plant Status</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./ppp-css.css') }}">
+	
+</head>
+<body>
+  <div class="login">
+     <h1>Predictions on Power Plant Working Status</h1>
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+      <input type="text" name="WeekDay" placeholder="WeekDay" required="required" /><br>
+      <input type="text" name="Period" placeholder="Period" required="required" /><br>
+      <input type="text" name="NSW_Price" placeholder="NSW_Price" required="required" /><br>
+      <input type="text" name="NSW_Demand" placeholder="NSW_Demand" required="required" /><br>
+      <input type="text" name="Vic_Price" placeholder="Vic_Price" required="required" /><br>
+      <input type="text" name="VIC_Demand" placeholder="VIC_Demand" required="required" /><br>
+      <input type="text" name="Transfer" placeholder="Transfer" required="required" /><br>
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   
+ </div>
+
+
+</body>
+ <br>
+ <br>
+ </div>
+ <pre> {{pred}} </pre>
+</html>
